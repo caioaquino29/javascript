@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo adivinhar</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+    html{font-family: sans-serif;}
+    body{background-color: #D9CBBF; 
+       width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 0 auto;}
+        h1{font-family: 'Press Start 2P', cursive;}
+    
+  .form input[type="number"]{margin: auto;
+      width: 100px;
+      border-radius: 4px;
+  }
+  .envioPalpite{ 
+    font-family: 'Syne Mono', monospace;
+    
+    font-weight: bolder;
+    border-radius: 100px;
+    width: 120px;
+    height: 50px;
+  background-color: cadetblue;
+  border: 2px solid black;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.408);
+}
+  strong{ background-color: blanchedalmond;}
+  .ultimoResultado{color: white;
+  padding: 3px;}
+
+  </style>
+</head>
+<body>
+  <h1>Jogo Adivinhe um Número!!</h1>
+  <p>Selecionamos um número aleatório <strong>entre 1 e 100</strong>. Veja se consegue adivinhar em 10 chances ou menos. Nós lhe diremos se seu palpite está com valor alto ou baixo. </p>
+  <div class="form">
+    <label for="campoPalpite">Digite seu palpite:</label>
+
+    <input type="number" min="1" max="100" required id="campoPalpite" class="campoPalpite">
+
+    <input type="submit" value="Enviar palpite" class="envioPalpite">
+  </div>
+
+<div class="resultadoParcial">
+  <p class="palpites"></p>
+  <p class="ultimoResultado"></p>
+  <p class="baixoOuAlto"></p>
+</div>
+
+<script>
+var numeroAleatorio= Math.floor(Math.random() * 100)+1;
+var palpites=document.querySelector('.palpites');
+var ultimoResultado= document.querySelector('.ultimoResultado');
+var baixoOuAlto=document.querySelector('.baixoOuAlto');
+var envioPalpite=document.querySelector('.envioPalpite')
+var campoPalpite=document.querySelector('.campoPalpite')
+var contagemPalpites=1;
+var botaoReinicio;
+
+function conferirPalpite() {
+  var palpiteUsuario = Number(campoPalpite.value);
+
+  if (contagemPalpites === 1) 
+  {
+    palpites.textContent = 'Palpites anteriores: ';
+  }
+  palpites.textContent += palpiteUsuario + ' ';
+
+  if (palpiteUsuario === numeroAleatorio) {
+    ultimoResultado.textContent = 'Parabéns! Você acertou! ';
+    ultimoResultado.style.backgroundColor = 'green';
+    baixoOuAlto.textContent = '';
+    configFimDeJogo();
+  } else if (contagemPalpites === 10) {
+    ultimoResultado.textContent = '!!!FIM DE JOGO!!!  ';
+    baixoOuAlto.textContent = '';
+    configFimDeJogo();
+  } else {
+    ultimoResultado.textContent = 'Errado!';
+    ultimoResultado.style.backgroundColor = 'red';
+    if(palpiteUsuario < numeroAleatorio) {
+      baixoOuAlto.textContent = 'Seu palpite está muito baixo!';
+    } else if(palpiteUsuario > numeroAleatorio) {
+      baixoOuAlto.textContent = 'Seu palpite está muito alto!';
+    }
+  }
+
+  contagemPalpites++;
+  campoPalpite.value = '';
+  campoPalpite.focus();
+}
+envioPalpite.addEventListener('click', conferirPalpite);
+
+function configFimDeJogo(){
+  campoPalpite.disabled=true;
+  envioPalpite.disabled=true;
+  botaoReinicio=document.createElement('button');
+  botaoReinicio.textContent='Iniciar novo Jogo';
+  document.body.appendChild(botaoReinicio);
+  botaoReinicio.addEventListener('click', reiniciarJogo);
+  
+}
+
+function reiniciarJogo() {
+  contagemPalpites=1;
+  var reiniciarParas= document.querySelectorAll('.resultadoParcial p');
+  for (var i=0;i<reiniciarParas.length; i++){ reiniciarParas[i].textContent=''}
+  botaoReinicio.parentNode.removeChild(botaoReinicio);
+  campoPalpite.disabled=false;
+  envioPalpite.disabled=false;
+  campoPalpite.value='';
+  campoPalpite.focus();
+  ultimoResultado.style.backgroundColor='#D9CBBF'
+  numeroAleatorio= Math.floor(Math.random() *100)+1;
+}
+
+</script>
+  
+</body>
+</html>
