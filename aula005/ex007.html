@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora </title>
+    <style>
+#somar{ font: bold 1.3em Arial; border-radius: 5px;}
+input{font: bold 1.3em Arial;
+    color: white;
+    background-color: rgba(213, 16, 55, 0.667);
+    width: 100px;}
+span{font: bold 1.3em Arial;}
+#res{ margin-top: 30px ;
+font: bold 1.3em Arial;}
+
+    </style>
+
+</head>
+<body>
+    <h1>Somador JavaScript!!</h1>
+    <input type="number" name="cal1" id="cal1">
+    <span>+</span>
+    <input type="number" name="cal2" id="cal2">
+    <input id="somar" type="button" value="Somar">
+    <div id="res">Resultado:</div>
+    
+    <script>
+        var botao=document.querySelector('#somar')
+        botao.addEventListener('click', soma)
+      function soma() 
+      { var tn1=document.querySelector('#cal1')
+        var tn2=document.querySelector('#cal2')
+        var res=document.querySelector('#res')
+        var n1=Number(tn1.value)
+        var n2=Number(tn2.value)
+        var s=n1+n2
+        
+        res.innerHTML='A soma entre ' +n1+ ' e '+ n2+ ' é igual: ' +s
+        }
+        
+        
+    </script>
+</body>
+</html>

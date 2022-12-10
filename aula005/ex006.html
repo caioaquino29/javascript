@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento DOM</title>
+    <style>
+        
+        
+        #bloco{
+
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            border-radius: 3px;
+            background-color: rgba(44, 44, 171, 0.606);
+            font: bolder 1.8em Arial;
+            text-align: center;
+            line-height: 200px;
+
+       
+           
+           
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <h1>Eventos DOMs</h1>`
+    <div id="bloco">Caixa</div>
+    <script>
+        var caixa = document.querySelector('#bloco')
+        caixa.addEventListener('click',click)
+        caixa.addEventListener('mouseenter', entre)
+        caixa.addEventListener( 'mouseout',saiu)
+        function click(){
+            caixa.innerText="Clicou!!"
+            caixa.style.background='red'
+        } 
+        function entre() { caixa.innerText='Entrou!!'
+    caixa.style.color='white'}
+        function saiu() {caixa.innerText='Saiu!!'}
+    </script>
+    
+</body>
+</html>
