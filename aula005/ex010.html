@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passaporte</title>
+  <style>
+    body{ display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 20px;
+
+    
+
+     }
+     main{display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    width: 400px;
+    height: 400px 
+    ;border: 1px solid black;
+   background-image: linear-gradient(#e66465, #9198e5);
+    border-radius: 15px;
+    box-shadow: 1px 2px 3px  rgba(0, 0, 0, 0.329);
+    font-weight: bold;
+}
+.botão{ border: 2px solid blueviolet;
+;}
+#resultado{ color: aliceblue;
+font-weight: bold;font-family: Arial, Helvetica, sans-serif;}
+
+  </style>
+</head>
+<body>
+    <main>
+        <h1>Emissor passaporte <code>jS</code>!!</h1>
+        <p>Insira sua imformações: </p>
+        <div id="bloco1">
+        
+                <span>Qual seu nome? </span>
+                <input type="text" name="nome" id="nome">
+        
+        </div>
+        <div id="bloco2">
+            <span>Voce é de Qual país?</span>
+            <input type="text" name="pais" id="pais" >
+        
+        </div>
+        <div class="botão">
+            <input type="button" value="Enviar" class="en1">
+        </div>
+    </main>
+    <div>
+        <p>Resultado :</p>
+        <span id="resultado"></span>
+    </div>
+    <script>
+        var texto1 = window.document.querySelector('#nome')
+        var texto2 = window.document.querySelector('#pais')
+        var final=window.document.querySelector('#resultado')
+        var button1= window.document.querySelector('.en1')
+        var button2= window.document.querySelector('.en2')
+        button1.addEventListener('click',passaporte)
+        button2.addEventListener('click',passaporte)
+        
+        function passaporte() {
+            var valor1= (texto1.value)
+            var valor2= (texto2.value)
+            // var b = (texto2 == "Brasil")
+            final.style.backgroundColor = 'green';
+            
+            if(valor2 == "Brasil")
+           
+       final.innerText=' >>>: '+valor1+ ' será emitido um passaporte  Brasileiro ';
+       else final.innerText= ' >>>: '+ valor1+' Por vc ser do(a) '+valor2+'  será emitido um passaporte  Extrangeiro'
+        }
+       
+      
+
+    </script>
+</body>
+</html>
