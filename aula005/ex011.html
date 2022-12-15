@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radar de Velocidade</title>
+    <style>
+        
+            body{ display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 20px;
+        }
+        main{display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    width: 500px;
+    height: 400px 
+    ;border: 1px solid black;
+   background-image: linear-gradient(#e66465, #91e5bf);
+    border-radius: 15px;
+    box-shadow: 1px 2px 3px  rgba(0, 0, 0, 0.329);
+    font-weight: bold;}
+    #bloco1{display: flex;
+    flex-direction: column;row-gap: 10px;}
+    #resultado{color: aliceblue;font-weight: bold;}
+    </style>
+
+</head>
+<body>
+    <main>
+        <h1>Aconcelhador de Trânsito </h1>
+        <div id="bloco1">
+            <span>Modelo de Carro:</span><input type="text" id="modelo">
+            <span>Placa do Veículo:</span><input type="text" id="placa">
+            <span>Velocidade do Veícolo:</span><input type="number"id='velocidade'> Klm/h
+        </div>
+        <div id="bloco2">
+            <input type="button" value="Verificador Multa " id="botão">
+        </div>
+    </main>
+    <div id="bloco3">
+        <h2>Resultado Provível: </h2>
+        <span Color="white" id="resultado"></span>
+    </div>
+    <script>
+        var text1=document.querySelector("#modelo")
+        var text2=document.querySelector("#placa")
+        var text3= document.querySelector("#velocidade")
+        var final=window.document.querySelector("#resultado")
+        var button= document.querySelector('#botão')
+        button.addEventListener("click",verificador)
+        function verificador(){
+            var valor1=(text1.value )
+            var valor2=(text2.value )
+            var valor3= Number(text3.value );
+            if(valor3>60)
+            final.style.backgroundColor='red'
+            else
+            final.style.backgroundColor="green"
+             if (valor3>60)
+             
+             final.innerText= "Se andar nessa velocidade "+valor3+ 'klm/h não estará na faixa de segunrança e será multado'
+             
+              else
+             
+             final.innerText= "Seu veículo " +valor1+'  '+valor2+" está faixa de segurança da via pode continuar com percuso"
+        }
+        </script>
+</body>
+</html>
