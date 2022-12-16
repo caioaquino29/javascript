@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela dos livros da Bíblia</title>
+    <style>
+        body{text-align: center;}
+    </style>
+</head>
+<body><h1>Tabela dos livros da Bíblia</h1>
+    <h2>Livros das escrituras "Hebraicas" e "Gregas" antes e depois de cristo.</h2>
+<div bloco1>
+    <p>Insira uma das informações </p>
+    <span>Nome do escritor Bíblico</span>
+    <input type="text"name="nome" id="nome">
+    <span>Nome do livro Bíblico</span>
+    <input type="text" name="livro" id="livro">
+    str
+</div>
+    <div id="bloco2">
+        <input type="button" value="Verificar" name="botão" id="botão">
+    </div>
+    <div>
+        <h2>Resultado:</h2>
+        <span id="resultado"></span>
+    </div>
+<script>
+    var text1= document.querySelector("#nome")
+    var text2=document.querySelector("#livro")
+    var button=document.querySelector("#botão")
+    var final=document.querySelector("#resultado")
+    button.addEventListener("click",tabela)
+    function tabela(){
+        var nome=(text1.value)
+        var livro=(text2.value)
+if( nome=="Moisés" ) {final.innerHTML=nome+' foi o escritor do livro Bíblicos:<br> <strong>Gênesis Ta>> No pricípio até 1657 ac </strong> <br> <strong>Êxedo Ta>>1657-1512ac</strong><br>  <strong>Levítico</strong><br> <strong>Números</strong> <br>  <strong>Deuteronômio</strong><br>  e <strong>Jó</strong>'}
+else if( nome=='' && livro=="Gênesis")
+{final.innerHTML='Moisés foi o escritor do livro Bíblicos:<br> <strong>'+livro+' Ta>> No pricípio até 1657 ac </strong>'}
+
+ if( nome=="Moisés" && livro=="Gênesis") 
+{final.innerHTML='Moisés foi o escritor do livro Bíblicos:<br> <strong>'+livro+' Ta>> No pricípio até 1657 ac </strong> Primeiro livro do Pentateuco (palavra grega para “cinco rolos” ou “volume quíntuplo”). “Gênesis” (que significa “Origem; Nascimento”) é o nome dado pela Septuaginta grega ao primeiro destes livros, ao passo que seu título hebraico Bereʼ·shíth (No Princípio) é tirado da primeira palavra na sua sentença inicial.'}
+ else if (nome=="Moisés" && livro=="Êxodo")
+{final.innerHTML='Moisés foi o escritor do livro Bíblicos:<br> <strong>'+livro+' Ta>> No 1657 até 1512 ac </strong>'}
+else if (nome=="Moisés" && livro==">Levítico")
+{final.innerHTML='Moisés foi o escritor do livro Bíblicos:<br> <strong>'+livro+' Ta>> No 1657 até 1512 ac </strong>'}
+else if (nome=="Moisés" && livro=="Números")
+{final.innerHTML='Moisés foi o escritor do livro Bíblicos:<br> <strong>'+livro+' Ta>> No 1657 até 1512 ac </strong>'}
+else if (nome=="Moisés" && livro=="Deuteronômio")
+{final.innerHTML='Moisés foi o escritor do livro Bíblicos:<br> <strong>'+livro+' Ta>> No 1657 até 1512 ac </strong>'}
+else if (nome=="Moisés" && livro=="Jó")
+{final.innerHTML='Moisés foi o escritor do livro Bíblicos:<br> <strong>'+livro+' Ta>> No 1657 até 1512 ac </strong>'}
+    }
+</script>
+</body>
+</html>
