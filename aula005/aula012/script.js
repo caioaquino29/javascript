@@ -3,7 +3,7 @@ function data(){
 var inf=window.document.querySelector('.par')
 var img=window.document.querySelector("#foto")
 var tempo= new Date()
-var hora = 21 /* tempo.getHours()*/
+var hora =  tempo.getHours()
 inf.textContent='Agora são '+hora+' hora'
 if(hora>=0 && hora<=12){
 img.src= "imagem/dia.png"
