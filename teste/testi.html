@@ -7,13 +7,17 @@
     <title>teste</title>
 </head>
 <body>
-    <div> <span id="sts">Olá Mundo </span>
+    <div class="vaga"> <span id="sts">Olá Mundo </span>
     <input type="submit" value="ok?" id="botao"></div>
     <script>
-        
+
+        var vaga = document.querySelector(".vaga")
         var acionador=document.querySelector('#botao')
         var ok=document.querySelector('#sts')
         function verificador(){
+            var imagem=document.createElement('img')
+            imagem.setAttribute('src',"nene.png")
+            vaga.appendChild(imagem)
             
             ok.innerHTML='ok mundo!!'
             

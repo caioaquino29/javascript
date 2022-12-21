@@ -6,7 +6,6 @@ function verificar(){
     var data= new Date ()
     var ano= Number(data.getFullYear())
     var anofinal=document.querySelector("#textano")
-    // var valor =Number(anofinal.value)
     var res = document.querySelector (".res")
    if(anofinal.value.length==0||Number(anofinal.value)>ano){window.alert('[ERRO] verifique os dados e tente novamente!')}
    else{ 
