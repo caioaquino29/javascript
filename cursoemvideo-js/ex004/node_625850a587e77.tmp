@@ -1,0 +1,6 @@
+var cauculo=1
+while (cauculo<=7) {
+    console.log('Passo'+cauculo)
+    cauculo++
+}
+do{console.log("Passo"+cauculo)}while(cauculo<=8)

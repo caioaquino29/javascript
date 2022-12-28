@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super contador</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            background-color: rgb(15, 166, 221);
+        
+        }
+        h1{
+            color: white;
+        }
+        main{
+            background-color: aliceblue;
+            padding: 10px;
+            width: 300px;
+            margin: auto;
+            border: 2px solid black;
+            border-radius: 20px;
+            box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.293);
+
+        }
+        #formulario{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 10px;
+            
+        }
+            input{
+                width: 100px;
+            }
+
+
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h1>Vamos contar</h1>
+    </header>
+    <main>
+        <div id="formulario">
+            <label for="ini">Inicio:</label>
+            <input type="number" name="inicio" id="inicio">
+            <label for="fim">Final:</label>
+            <input type="number" name="fim" id="fim">
+            <label for="pas">Passo:</label>
+            <input type="number" name="passo" id="passo">
+            <input type="button" value="Contar" id="botao">
+
+
+        </div>
+        <div>
+            <p id="res">....</p>
+        </div>
+    </main>
+    <footer>
+        <p><i>&copy;CursoemVideo</i> </p>
+    </footer>
+    <script src="5.js"></script>
+    
+</body>
+</html>
