@@ -1,7 +1,6 @@
  let button = document.querySelector('#butt');
-// button.addEventListener('click',minhaFunction());
 
-
+ button.addEventListener("click",minhaFunction);
 
 function minhaFunction(){
     var copieOTexto=document.querySelector('#copy')

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundado o fundo 2</title>
+</head>
+<body>
+    <button class="btn"> Clicar</button>
+    <script>
+        let btn = document.querySelector('.btn')
+        function aleatorio(numero){
+          return   Math.floor(Math.random()*(numero+1))
+        }
+        btn.addEventListener('click',corDeFuondo)
+        function corDeFuondo(){
+            let corFundo = `rgb( ${aleatorio(255)},${aleatorio(255)},${aleatorio(255)})`
+             event.target.style.backgroundColor=corFundo;
+             console.log(event);
+        }
+    </script>
+</body>
+</html>

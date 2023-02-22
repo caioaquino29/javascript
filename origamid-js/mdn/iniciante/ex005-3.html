@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar cor fundo de uma div</title>
+    <style>.bloco{
+        width: 300px;
+        height: 
+        300px;
+        border: 1px solid black;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="bloco"></div>
+        <div class="bloco"></div>
+        <div class="bloco"></div>
+        <div class="bloco"></div>
+        <div class="bloco"></div>
+        <div class="bloco"></div>
+        <div class="bloco"></div>
+        <div class="bloco"></div>
+    </div>
+    <script>
+         function aletorio(numero){
+          return  Math.floor(Math.random()*(numero))
+        }
+        function corDiv(){
+           let coresDiv=`rgb(${aletorio(255)},${aletorio(255)},${aletorio(255)})`
+           return coresDiv;
+          
+           
+           }
+        
+        let bloco=document.querySelector('#container')
+        bloco.addEventListener('click',event => event.target.style.backgroundColor=corDiv())
+       
+        var divs = document.querySelectorAll('div');
+
+for (var i = 0; i < divs.length; i++) {
+  divs[i].onclick = function(event) {
+    event.target.style.backgroundColor = corDiv();
+  }
+}
+
+           
+        
+
+    </script>
+    
+</body>
+</html>

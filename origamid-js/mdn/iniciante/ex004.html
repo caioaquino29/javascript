@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Biblioteca de Exemplos de Função</title>
+  <style>
+    input {
+      font-size: 2em;
+      margin: 10px 1px 0 ;
+    }
+  </style>
+  </head>
+<body>
+  
+
+  <input class="numberInput" type="text">
+  <p></p>
+
+  <script>
+    const input = document.querySelector('.numberInput');
+    const para = document.querySelector('p');
+   
+ 
+    
+   
+    function quadrado(num){
+      return num * num
+    }
+    function cubo(num){
+      return num * num * num
+    }
+    function fatorial(num){
+      var x=num;
+      while (x>1){
+        num *= x-1;
+        x--;}
+        return num 
+        }
+        function circuferencia(num){
+          return Math.floor(2 * Math.PI * num)
+        }
+        function triagulo(num){
+          let y = Number(num)
+          return (y * (y + 2))/2
+        }
+        input.onchange=function(){
+          let num = input.value;
+          if(isNaN(num)){
+            para.textContent='Você só pode entra com número!!'
+          }else{
+            para.textContent=`${num}  quadrado é ${quadrado(num)} ${'br'}>> ${num}   cubo é ${cubo(num)} >> ${num} ao fatorial é ${fatorial(num)}. >> ${num} a circuferecia é ${circuferencia(num)} >>> ${num} area do triagulo ${triagulo(num)}`
+          }
+        }
+  </script>
+</body>
+</html>

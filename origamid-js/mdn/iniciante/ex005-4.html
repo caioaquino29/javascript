@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for="Primeiro nome">Primeiro nome</label><input type="text" name="primeiro" id="primeiro">
+        <label for="segundo nome ">Segundo nome </label><input type="text" name="segundo" id="segundo">
+        <input id="submit" type="submit">
+    </form>
+    <p></p>
+    <script>
+        let form=document.querySelector('form')
+        let prim=document.querySelector('#primeiro')
+        let segu=document.querySelector('#segundo')
+        let btn=document.querySelector( '#submit')
+        let para=document.querySelector('p')
+        form.onsubmit=function(event){
+            if (prim.value===''||segu.value===''){
+                event.preventDefault();
+             para. textContent='Coloque seu nome e sobrenome por getileza!!'
+            }
+        }
+
+
+    </script>
+</body>
+</html>

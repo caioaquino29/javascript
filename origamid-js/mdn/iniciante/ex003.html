@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Cixa de Mensagem</title>
+    <style>
+        .msgBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 200px;
+        background: #eee;
+      }
+
+      .msgBox p {
+        line-height: 1.5;
+        padding: 10px 20px;
+        color: #333;
+      }
+
+      .msgBox button {
+        background: none;
+        border: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.1rem;
+        color: #aaa;
+      }
+    </style>
+</head>
+<body>
+    <button id="bnt" >Mostrar Caixa de Mensagens</button>
+    <script>
+        var botão=document.querySelector('#bnt')
+        botão.addEventListener('click',mostrarMensagem)
+function mostrarMensagem(){
+    
+    var html=document.querySelector('html')
+    var painel = document.createElement('div')
+    painel.setAttribute('class','msgBox')
+    html.appendChild(painel)
+    
+    var msg=document.createElement('p');
+    msg.textContent='Está é um Caixa de Mensagens!!';
+    painel.appendChild(msg)
+    
+    var fecharBtn = document.createElement('button');
+    fecharBtn.textContent='x'
+    painel.appendChild(fecharBtn)
+
+    fecharBtn.onclick=function(){
+        painel.parentNode.removeChild(painel)
+    }
+
+
+}
+    </script>
+    
+</body>
+</html>

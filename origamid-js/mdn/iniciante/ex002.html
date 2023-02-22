@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Fucinamento de Scope</title>
+  </head>
+<body>
+
+  <script>
+    const x = 1;
+
+    function a() {
+      var y = 2;
+      saida(z)
+    }
+
+    function b() {
+      const z = 3;
+      saida(y)
+    }
+
+    function saida(value) {
+      const para = document.createElement('p');
+      document.body.appendChild(para);
+      para.textContent = `Vale: ${value}`;
+    }
+  </script>
+</body>
+</html>

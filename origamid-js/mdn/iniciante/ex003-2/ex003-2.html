@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Cixa de Mensagem 2</title>
+    <style>
+        .msgBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 242px;
+        background: #eee;
+      }
+
+      .msgBox p {
+        line-height: 1.5;
+        padding: 10px 20px;
+        color: #333;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+    
+        
+      }
+
+      .msgBox button {
+        background: none;
+        border: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.1rem;
+        color: #aaa;
+      }
+    </style>
+</head>
+<body>
+    <button id="bnt" >Mostrar Caixa de Mensagens</button>
+    <script>
+        var botão=document.querySelector('#bnt')
+        botão.addEventListener('click',function(){mostrarMensagem('Woo, uma mensagem diferente!!')})
+// Sua caixa de entrada está quase cheia — exclua alguns e-mails
+// Brian: Olá, como você está hoje?
+function mostrarMensagem(msgText,msgType){
+    
+    var html=document.querySelector('html')
+    var painel = document.createElement('div')
+    painel.setAttribute('class','msgBox')
+    html.appendChild(painel)
+    
+    var msg=document.createElement('p');
+    msg.textContent=msgText;
+    painel.appendChild(msg)
+    
+    var fecharBtn = document.createElement('button');
+    fecharBtn.textContent='x'
+    painel.appendChild(fecharBtn)
+
+    fecharBtn.onclick=function(){
+        painel.parentNode.removeChild(painel)
+    }
+if (msgType==='aviso') {
+    
+   painel.style.backgroundColor='red'
+   painel.style.borderRadius='10px'
+   msg.style.color='white'
+   msg.style.backgroundImage="url(icone/warning.png)" 
+}else if (msgType==='chat' ) {
+    painel.style.backgroundColor='lightgreen'
+    painel.style.borderRadius='10px'
+    msg.style.backgroundImage='url(icone/chat.png)'
+    msg.style.fontWeight='bold'
+    msg.style.color='white'
+
+}else{ painel.style.borderRadius='10px'
+msg.style.paddingLeft='20px' 
+}
+
+}
+    </script>
+    
+</body>
+</html>
