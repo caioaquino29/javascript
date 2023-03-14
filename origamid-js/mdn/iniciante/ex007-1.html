@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A banda</title>
+
+</head>
+<body>
+    <h1> A Banda na top music!! </h1>
+<section class="seção">
+
+</section>
+<script>
+    let banda={
+        nome:'Forrozeiros',
+        nacinalidade:"Brasileira",
+        genero:'Forror',
+        menbros:4,
+        inicio:1989,
+        separação:false,
+        albums:{nome0:'Fortaleza da solodão',lan1:1990,nome1:'Chove Chuva',lan2:1995}
+
+    }
+   
+// banda.albums[0]={nome:'Fortaleza da solodão',lan:1990},
+// banda.albums[1]={nome:'Chove Chuva',lan:1995}
+let infBanda= `Seu nome é ${banda.nome}, nacionalidade ${banda['nacinalidade']}, anos ativos ${banda.inicio} e estilo é ${banda.genero}, e a data de ${banda.['albums']['lan1']} com título ${banda.albums.nome0} foi lançamento de seu primeiro álbum.`
+const seção =document.querySelector('.seção')
+let para=document.createElement('p')
+seção.appendChild(para)
+para.textContent=infBanda
+
+
+
+</script>
+    
+</body>
+</html>

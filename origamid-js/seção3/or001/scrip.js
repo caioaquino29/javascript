@@ -1,0 +1,6 @@
+const allImg = document.querySelectorAll('img')
+const imgAll = document.querySelectorAll('[src^="img/i"]')
+const hrefAll= document.querySelectorAll('[href^="#"]')
+const priH2= document.querySelector('h2')
+const allPara=document.querySelectorAll('p')
+console.log(allPara[--allImg.length])

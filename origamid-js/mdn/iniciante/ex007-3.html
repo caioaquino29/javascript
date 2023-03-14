@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat and cat</title>
+</head>
+<body>
+    <h1> Cat and cat 2!! </h1>
+
+<script>
+    function Cat(name, breed, color, ){
+        this.name=name,
+        this.breed=breed,
+        this.color=color,
+        this.greeting=function() {
+    console.log(`Hello, said ${ this.name } the ${ this.breed }.`)}
+
+    }
+const cat = new  Cat
+ ('Bertie','Cymric',
+  'white');
+  
+
+const cat2 = new Cat(
+ 'Elfie',
+   'Aphrodite Giant',
+  'ginger');
+
+cat.greeting();
+cat2.greeting();
+</script>
+</body>
+</html>
