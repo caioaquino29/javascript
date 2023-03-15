@@ -11,9 +11,11 @@ const pulo =function(){
 const loop = setInterval(()=>{
 const pipePosição=pipe.offsetLeft;
 const marioPosição=+window.getComputedStyle(mario).bottom.replace('px',' ');
+const nuvemPosição =nuvem.offsetLeft;
 console.log(marioPosição)
 if(pipePosição<=115 && pipePosição>0 &&marioPosição<88){
  nuvem.style.animation='none'
+ nuvem.style.left=`${nuvemPosição}px`
  
 pipe.style.animation='none';
 pipe.style.left=`${pipePosição}px`;
@@ -26,4 +28,4 @@ clearInterval(loop)
 }
 },10);
 
-document.addEventListener('keydown',pulo)
+document.addEventListener('click',pulo)
