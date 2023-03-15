@@ -24,8 +24,9 @@ mario.style.bottom=`${marioPosição}px`;
 mario.src='imagem/gameover.webp'
 mario.style.width='75px'
 mario.style.marginLeft='25px'
+
 clearInterval(loop)
 }
 },10);
 
-document.addEventListener('click',pulo)
+document.addEventListener('keypress',pulo)
