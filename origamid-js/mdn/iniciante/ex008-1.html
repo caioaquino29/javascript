@@ -7,9 +7,32 @@
     <title>O texto do dia em JSON</title>
 </head>
 <body>
-    <header></header>
-    <section></section>
-    <script></script>
+    <header class="cabecalho"></header>
+    <section class="secao
+    "></section>
+    <script>
+        var cabecalho =document.querySelector(".cabecalho");
+        var secao =document.querySelector(".secao");
+        var solicitarURL="https://caioaquino29.github.io/javascript/origamid-js/mdn/iniciante/arquivoJSON.json"
+        var solicitação= new XMLHttpRequest();
+         solicitação.open('GET',solicitarURL);
+          solicitação.responseType='json';
+        solicitação.send();
+        
+        solicitação.onload=function(){
+        var textoDia = solicitação.response;
+        mostra(textoDia)
+    }
+function mostra(textoDia){
+         var para =document.createElement('p');
+         para.textContent="Oi "+textoDia['texto completo'][0];
+         secao.appendChild(para)}
+
+
+
+    
+    </script>
+    
     
 </body>
 </html>
