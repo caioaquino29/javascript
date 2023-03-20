@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquivo JSON </title>
+    <style>/* || general styles */
+
+        html {
+          font-family: 'helvetica neue', helvetica, arial, sans-serif;
+        }
+        
+        body {
+          width: 800px;
+          margin: 0 auto;
+        }
+        
+        h1, h2 {
+          font-family: 'Faster One', cursive;
+        }
+        
+        /* header styles */
+        
+        h1 {
+          font-size: 4rem;
+          text-align: center;
+        }
+        
+        header p {
+          font-size: 1.3rem;
+          font-weight: bold;
+          text-align: center;
+        }
+        
+        /* section styles */
+        
+        section article {
+          width: 33%;
+          float: left;
+        }
+        
+        section p {
+          margin: 5px 0;
+        }
+        
+        section ul {
+          margin-top: 0;
+        }
+        
+        h2 {
+          font-size: 2.5rem;
+          letter-spacing: -5px;
+          margin-bottom: 10px;
+        }</style>
+</head>
+<body>
+    <!-- O JSON é puramente um formato de dados — contém apenas propriedades, sem métodos.
+JSON requer aspas duplas para serem usadas em torno de strings e nomes de propriedades. Aspas simples não são válidas.
+Mesmo uma única vírgula ou cólon perdidos podem fazer com que um arquivo JSON dê errado e não funcione. Você deve ter o cuidado de validar quaisquer dados que você esteja tentando usar (embora o JSON gerado por computador seja menos provável de incluir erros, desde que o programa gerador esteja funcionando corretamente). Você pode validar o JSON usando um aplicativo como o JSONLint.
+O JSON pode realmente assumir a forma de qualquer tipo de dados que seja válido para inclusão dentro do JSON, não apenas matrizes ou objetos. Por exemplo, uma única string ou número seria um objeto JSON válido.
+Ao contrário do código JavaScript no qual as propriedades do objeto podem estar sem aspas, em JSON, somente strings entre aspas podem ser usadas como propriedades. -->
+<header></header>
+<section></section>
+<script >
+    var cabeçalho =document.querySelector('header');
+    var seção=document.querySelector('section');
+    var solicitarURL='https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+    var solicitação= new XMLHttpRequest();
+    solicitação.open('GET',solicitarURL);
+    solicitação.responseType='json';
+    solicitação.send();
+    solicitação.onload=function(){
+        var superHeroi=solicitação.response;
+        preecherCabeçalho(superHeroi);
+        mostraHerois(superHeroi);
+    }
+    function preecherCabeçalho(jsonObj){
+        var meuH1
+=document.createElement('h1'); meuH1.textContent= jsonObj.squadName;
+cabeçalho.appendChild(meuH1);
+var meuPara =document.createElement('p');
+meuPara.textContent=`Hometown: ${jsonObj['homeTown']} // Formed: ${jsonObj.formed}`; cabeçalho.appendChild(meuPara)  }
+function mostraHerois(jsonObj){
+  var heroi =jsonObj.members;
+  for(var i=0;i<heroi.length;i++){
+    var meuArtigo =document.createElement('article');
+    var meuH2=document.createElement('h2');
+    meuPara1=document.createElement('p');
+    meuPara2=document.createElement('p');
+    meuPara3=document.createElement('p');
+    var minhaList=document.createElement('ul');
+    meuH2.textContent=heroi[i].name;
+    meuPara1.textContent=`Secret identity: ${heroi[i].secretIdentity}`;
+    meuPara2.textContent=`Age: ${heroi[i].age}`;
+    meuPara3.textContent=`Superpowers`;
+    var superPoder=heroi[i].powers;
+    for(var j=0; j<superPoder.length;j++){
+      var intensLista =document.createElement('li');
+      intensLista.textContent=superPoder[j];
+      minhaList.appendChild(intensLista);
+
+    }
+    meuArtigo.appendChild(meuH2)
+    meuArtigo.appendChild(meuPara1)
+    meuArtigo.appendChild(meuPara2)
+    meuArtigo.appendChild(meuPara3)
+    meuArtigo.appendChild(minhaList)
+    seção.appendChild(meuArtigo)
+
+
+  }
+}
+
+
+</script>    
+</body>
+</html>
