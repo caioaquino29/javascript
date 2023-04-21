@@ -120,9 +120,10 @@ p{
     
 
 }
+
 .pulo{animation: pulo 500ms  ease-out; }
 @keyframes nuvens{
-    from{right: -550px;}
+    from{right: -450px;}
     to{right: 100%;}
 }
 @keyframes pulo{
@@ -136,5 +137,5 @@ p{
 }
 @keyframes pipe-animação{
     from{ right: -80px;}
-    to{ right: 100%;}
+    to{ right: 200%;}
 }

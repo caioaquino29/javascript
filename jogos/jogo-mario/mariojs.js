@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function mostrarMensagem(){
   
   pipe.style.animation='none';
   pipe.style.left=`-80px`;
-  
+  focus
   
   inicioBtn.onclick=function(){
     painel.parentNode.removeChild(painel);
