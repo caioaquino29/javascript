@@ -2,7 +2,8 @@ const papel=document.querySelector('.desenho');
 const ctx =papel.getContext('2d');
 const largura=papel.width=window.innerWidth;
 const altura=papel.height=window.innerHeight;
-const para=document.querySelector('p')
+const para=document.querySelector('p');
+let count=0;
 
 
 function aletorio(min, max){
@@ -85,16 +86,24 @@ window.onkeydown = function(Event) {
 
 CirculoMaligno.prototype.colidirDeletar=function(){
     for(let j=0;j<bolas.length;j++){
+        
         if(!(bolas[j].existe===false)){
             const dx =this.x - bolas[j].x;
             const dy = this.o - bolas[j].o;
             const distancia =Math.sqrt(dx*dx+dy*dy);
-            if(distancia<this.raio+bolas[j].raio){
-                bolas[j].existe=this.existe=false};
+            if(distancia<this.raio+bolas[j].raio){ 
+
+                bolas[j].existe=this.existe=false;
+                --count;
+                para.textContent=`Bolas em jogo: ${count}`;
+                
+            };
             }
-        }
+        
     }
 
+    };
+    
 
 
 Bola.prototype.draw= function(){
@@ -144,14 +153,13 @@ while(bolas.length<50){
         'rgb(' + aletorio(0,255) + ',' + aletorio(0,255) + ',' + aletorio(0,255) +')',
         raio
     );
-    bolas.push(bola);
-}
-
-for(let u=0;u<bolas.length;u++){
+   bolas.push(bola);
+   count++;
+  para.textContent=`Bolas em jogo: ${count}`
     
-    para.textContent='Bolas deletadas'+ bolas.length;
-    para.appendChild='body'
-}
+};
+
+
 
 let mauCicurlo= new CirculoMaligno(aletorio(0,largura),aletorio(0,altura),20,20,true,'white',10);
 mauCicurlo.setControle();
@@ -172,6 +180,8 @@ function loop(){
         mauCicurlo.colidirDeletar();
         mauCicurlo.verificarLimit();
     requestAnimationFrame(loop);
+    
+    
 }
 
 

@@ -1,7 +1,80 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+
 *{margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
+
+
+
+
+
+.msgBox {
+    position:fixed;
+    top: 40%;
+    left: 45%;
+    transform: translate(-50%,-50%);
+    width: 223px;
+    height: 223px ;
+    /* background-image:url('imagem/bloco.png');
+    background-position: center;
+    background-size: cover ; */
+    background-color: #e6ff24;
+    border: 20px groove #d4ec21;
+    border-radius: 15px;
+  
+
+    
+  }
+  .score{font-family:  'Press Start 2P', cursive;
+    font-weight: bold;
+}
+  .msgBox p {
+    
+    font-size: 0.9em;
+    font-family:  'Press Start 2P', cursive;
+    margin:20px 10px;
+    width: 170px;
+    height: 100px;
+  text-align:left;
+   
+    color: #333;
+  }
+  .msgBox button{
+    font-family:  'Press Start 2P', cursive;
+    height: 30px;
+    margin:150px 50px 0px 40px ;
+    background-color: #b3c71e;
+  border: 2px groove black;
+
+  }
+  .msgBox button:hover { background-color:rgba(0, 0, 0, 0.645); color:#d4ec21; transition: 0.6s;}
+  .btn{
+    font-family:  'Press Start 2P', cursive;
+    border: 1px groove black;
+    height: 30px;
+    margin:auto;
+    display: block;
+    background-color: #d4ec21;
+    border: 2px groove black;
+    
+   }
+   .btn:hover { background-color:rgba(0, 0, 0, 0.516); color:#d4ec21;transition: 0.6s;}
+   .box{
+    font-family:  'Press Start 2P', cursive;
+    
+    font-size: 2em;
+    font-weight: bolder;
+    
+   
+    position:fixed;
+    top: 40%;
+    left: 45%;}
+  
 .bloco-game{
     width: 100%;
     height: 500px;
@@ -19,6 +92,17 @@ box-sizing: border-box;
   
     animation: pipe-animação 2s infinite linear;
 
+}
+p{
+    position: absolute;
+    margin-left: 50px;
+    margin-top:20px;
+   width: 50px;
+   height: 50px;
+    
+    
+
+    
 }
 .mario{
     position: relative;
