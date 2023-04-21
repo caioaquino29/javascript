@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function mostrarMensagem(){
     },10);
     
     document.addEventListener('keypress',pulo)
-    
+    document.addEventListener('touchend',pulo)
       
   }}  );
   const pulo =function(){
