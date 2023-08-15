@@ -83,20 +83,8 @@ window.onkeydown = function(Event) {
     } else if (Event.keyCode === 83) {
       _this.o += _this.vely;
     }
-  } 
-  window.ontouchend = function(Event) {
-   
-    if (Event.keyCode === 65) {
-      _this.x -= _this.velx;
-    } else if (Event.keyCode === 68) {
-      _this.x += _this.velx;
-    } else if (Event.keyCode === 87) {
-      _this.o -= _this.vely;
-    } else if (Event.keyCode === 83) {
-      _this.o += _this.vely;
-    }
-  } 
-}
+  } }
+ 
 
 CirculoMaligno.prototype.colidirDeletar=function(){
     for(let j=0;j<bolas.length;j++){

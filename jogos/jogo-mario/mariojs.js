@@ -8,6 +8,8 @@ const audio=document.querySelector('audio')
 let contador=0;
 document.addEventListener('DOMContentLoaded', function mostrarMensagem(){
    
+   
+
   var html=document.querySelector('.bloco-game');
   var painel = document.createElement('div');
   painel.setAttribute('class','msgBox');
@@ -34,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function mostrarMensagem(){
     painel.parentNode.removeChild(painel);
     pipe.style.animation='';
     pipe.style.left=``;
-    
+    audio.setAttribute
     const loop = setInterval(()=>{
       
     const pipePosição=pipe.offsetLeft;
@@ -64,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function mostrarMensagem(){
     // var over =document.createComment('h1');
     // box.appendChild(over);
     // over.setAttribute('class','over')
-    box.textContent='GAME OVER';
+    box.textContent=`GAME OVER`;
     box.style.color='red'
     var btn = document.createElement('button');
     box.appendChild(btn);
